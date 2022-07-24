@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Job Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ job.role }}</span>
+    <p>Company: {{ job.company }}</p>
+    <p>Salary: {{ job.salary }}</p>
+    {% if job.salary > 65000 %}
+        <p>Worth it? :  Worth it...</p>
+    {% else %}
+        <p>Keep looking...</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
