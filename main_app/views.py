@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Job
 
 # class Job:
@@ -13,6 +14,18 @@ from .models import Job
 #     Job('Meta', 'React Engineer', 99000)
 # ]
 
+class JobCreate(CreateView):
+    model = Job
+    fields = '__all__'
+
+class JobUpdate(UpdateView):
+    model = Job
+    fields = "__all__"
+
+class JobDelete(DeleteView):
+    model = Job
+    success_url = '/jobs/'
+
 def home(request):
     return render(request, 'home.html')
 
@@ -26,3 +39,4 @@ def jobs_index(request):
 def jobs_detail(request, job_id):
     job = Job.objects.get(id=job_id)
     return render(request, 'jobs/detail.html', {'job': job})
+

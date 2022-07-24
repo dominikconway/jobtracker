@@ -18,8 +18,9 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Job Tracker</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/jobs">My Job Prospects</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'jobs_create' %}">New Job</a></li>
+          <li><a href="{% url 'index' %}">My Job Prospects</a></li>
         </ul>
       </div>
     </nav>
