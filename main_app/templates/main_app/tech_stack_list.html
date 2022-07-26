@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Skills List</h1>
+
+{% for tech_stack in tech_stack_list %}
+  <a href="{% url 'tech_stack_detail' tech_stack.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ tech_stack.skill }}</span>
+            <p>Level: {{ tech_stack.level }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
