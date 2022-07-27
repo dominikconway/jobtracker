@@ -17,4 +17,5 @@ urlpatterns = [
     path('techstack/<int:pk>/update/', views.Tech_stackUpdate.as_view(), name='tech_stack_update'),
     path('techstack/<int:pk>/delete/', views.Tech_stackDelete.as_view(), name='tech_stack_delete'),
     path('techstack/<int:job_id>/assoc_tech_stack/<int:tech_stack_id>/', views.assoc_tech_stack, name='assoc_tech_stack'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]

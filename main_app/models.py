@@ -1,6 +1,7 @@
 from datetime import date
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 INTERVIEWS = (
     ('I', 'Interview'),
@@ -8,19 +9,15 @@ INTERVIEWS = (
     ('C', 'CallBack')
 )
 
-LEVELS = (
-    ('Junior', 'Junior'),
-    ('Mid-Level', 'Mid-Level'),
-    ('Senior', 'Senior')
-)
+# LEVELS = (
+#     ('Junior', 'Junior'),
+#     ('Mid-Level', 'Mid-Level'),
+#     ('Senior', 'Senior')
+# )
 
 class Tech_Stack(models.Model):
     skill = models.CharField(max_length=50)
-    level = models.CharField(
-        max_length=10,
-        choices=LEVELS,
-        default=LEVELS[0][0]
-    )
+    level = models.CharField(max_length=50)
 
     def __str__(self):
         return self.skill
@@ -33,6 +30,7 @@ class Job(models.Model):
     role = models.CharField(max_length=100)
     salary = models.DecimalField(max_digits=10, decimal_places=2)
     tech_stack = models.ManyToManyField(Tech_Stack)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.company
@@ -58,3 +56,5 @@ class Followup(models.Model):
     
     class Meta:
         ordering = ['-date']
+    
+    
