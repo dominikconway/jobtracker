@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>The Prospects</h1>
+<h1>JOBs</h1>
 
 {% for job in jobs %}
-  <div class="card">
+  <div class="card blue darken-4">
     <a href="{% url 'detail' job.id %}">
     <div class="card-content">
       <span class="card-title">{{ job.role }}</span>
-      <p>Company: {{ job.company }}</p>
-      <p>Salary: {{ job.salary }}</p>
-      {% if job.salary > 65000 %}
-        <p>Worth it? :  Worth it...</p>
-      {% else %}
-        <p>Keep looking...</p>
-      {% endif %}
+      <h5>@ {{ job.company }}</h5>
+      <h5>$ {{ job.salary }}</h5>
     </div>
   </div>
 {% endfor %}

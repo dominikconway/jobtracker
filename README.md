@@ -5,7 +5,7 @@ This application can be used for organizing your job hunt! Got a new job prospec
 [Click Here]() to see the deployed app!
 [Trello Board]()
 [Wireframe and ERD](https://www.figma.com/file/jB8r7v6gBQ3mrTQs3rChez/Job-Tracker-Application-in-Django?node-id=0%3A1)
-[Github Repo]()
+[Github Repo](https://github.com/dominikconway/jobtracker)
 
 
 ## User Stories
@@ -22,39 +22,9 @@ This application can be used for organizing your job hunt! Got a new job prospec
 - Heroku
 
 
-## Route Tables
-***
-![]()
-
-![]()
-
-## ERD Diagram
-***
-![]()
-
-## Model Schema Table
-***
-![]() 
-
-##  Original WireFrames
-***
-![]()
-
-
-# Screenshots
+## Future Enhancements
 ***
 
-### On app load
-***
-![]()
-
-### After clicking 
-***
-![]()
-
-### after clicking 
-***
-![]()
 
 
 ***

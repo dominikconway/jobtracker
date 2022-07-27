@@ -5,11 +5,11 @@
 
 <div class="row">
   <div class="col s6">
-    <div class="card">
-      <div class="card-content">
+    <div class="card blue darken-4">
+      <div class="card-content ">
         <span class="card-title">{{ job.role }}</span>
-        <p>Breed: {{ job.company }}</p>
-        <p>Description: {{ job.salary }}</p>
+        <h5>@ {{ job.company }}</h5>
+        <h5>$ {{ job.salary }}</h5>
       </div>
       <div class="card-action">
         <a href="{% url 'jobs_update' job.id %}">Edit</a>
@@ -21,14 +21,8 @@
     <form action="{% url 'add_followup' job.id %}" method="post">
       {% csrf_token %}
       {{ followup_form.as_p }}
-      <input type="submit" class="btn" value="Add Follow-Up">
+      <input type="submit" class="btn blue darken-4" value="Add Follow-Up">
     </form>
-    <br>
-    {% if job.got_followup.count %}
-      <div class="card-panel teal-text center-align">{{object.role}} outcome for this role looks good! </div>
-    {% else %}
-      <div class="card-panel red-text center-align">{{object.role}} do not give up!</div>
-    {% endif %}
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Follow-up</th></tr>
@@ -47,10 +41,10 @@
 <hr>
 <div class="row">
 	<div class="col s6">
-		<h3>{{ job.role }}'s Skills</h3>
+		<h3>Skills Required</h3>
     {% if job.tech_stack.count %}
       {% for tech_stack in job.tech_stack.all %}
-        <div class="card">
+        <div class="card blue darken-4">
 			<div class="card-content">
 				<span class="card-title">
 					 <span>{{ tech_stack.level }} level</span> {{ tech_stack.skill }} 
@@ -67,7 +61,7 @@
     <h3>Available Skills</h3>
     {% if tech_stack.count %}
       {% for tech_stack in tech_stack.all %}
-        <div class="card">
+        <div class="card blue darken-4">
           <div class="card-content">
             <span class="card-title">
               <span>{{ tech_stack.level }} level</span> {{ tech_stack.skill }}
@@ -76,7 +70,7 @@
           <div class="card-action">
             <form action="{% url 'assoc_tech_stack' job.id tech_stack.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn">Add</button>
+              <button type="submit" class="btn blue darken-3">Add</button>
             </form>
           </div>
         </div>
