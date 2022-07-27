@@ -24,7 +24,7 @@
       <input type="submit" class="btn" value="Add Follow-Up">
     </form>
     <br>
-    {% if job.got_followup %}
+    {% if job.got_followup.count %}
       <div class="card-panel teal-text center-align">{{object.role}} outcome for this role looks good! </div>
     {% else %}
       <div class="card-panel red-text center-align">{{object.role}} do not give up!</div>
