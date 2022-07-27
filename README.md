@@ -24,8 +24,10 @@ This application can be used for organizing your job hunt! Got a new job prospec
 
 ## Future Enhancements
 ***
-
+- Resume uploader
+- Cover letter uploader
+- Mobile optimization
 
 
 ***
-#### A project by Alex
+#### A project by Alex Conway
